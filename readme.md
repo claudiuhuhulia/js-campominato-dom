@@ -25,3 +25,6 @@ Al termine della partita, il software deve comunicare il punteggio, cioè il num
 
 - Creo una variabile '*SCORE*' che tenga il conteggio delle celle cliccate.
     - **SE** la cella non ha la classe '*clicked*' allora aumenta il contatore '*SCORE*'.
+- Creo una function che mi generi 16 numeri random.
+    - Dichiaro una array vuota. 
+    - continuo a generare numeri **fintanto che** la lunghezza dell'array è minore di 16 (considerando lo 0) e utilizzo un **DO WHILE** per far si che non vengano inseriti numeri uguali all'interno dell'array, successivamente li inserisco nell'array dichiarata precedentemente.

@@ -1,4 +1,3 @@
-
 /* DOM ELEMENTS */
 
 const grid = document.getElementById('grid');
@@ -12,13 +11,27 @@ const createCell = () => {
     cell.className= 'cell';
     return cell;
 } 
+const bombs = getrandombombs();
+function getrandombombs(){
+  let bombs=[];
+  while(bombs.length < 16){
+   let randomNumb;
+    do{
+    randomNumb = Math.floor(Math.random() * 100) + 1;
+    }
+    while(bombs.includes(randomNumb));
+    bombs.push(randomNumb);
+  }
+ return bombs
+}
 
-
+console.log(bombs); 
 
 button.addEventListener('click', function(){
 
   grid.innerText='';
   let score = 0;
+
     for(i= 0 ; i < 100; i ++){
       const cell = createCell();  
       
