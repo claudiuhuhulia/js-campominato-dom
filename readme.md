@@ -24,4 +24,4 @@ Al termine della partita, il software deve comunicare il punteggio, cioè il num
         - Creo una costante che sia uguale all'index number associato alla cella per poterla stampare in console.
 
 - Creo una variabile '*SCORE*' che tenga il conteggio delle celle cliccate.
-- 
+    - **SE** la cella non ha la classe '*clicked*' allora aumenta il contatore '*SCORE*'.

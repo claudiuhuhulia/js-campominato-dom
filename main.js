@@ -5,7 +5,6 @@ const grid = document.getElementById('grid');
 const button= document.getElementById('play');
 const scoreElement = document.getElementById('score');
 
-
 /* FUNCTIONS */
 
 const createCell = () => {
@@ -13,7 +12,6 @@ const createCell = () => {
     cell.className= 'cell';
     return cell;
 } 
-
 
 
 
@@ -27,17 +25,14 @@ button.addEventListener('click', function(){
       const cellnumb = cell.innerText= i + 1;
       
       cell.addEventListener('click', function(){
-        
-        cell.classList.add('clicked');
-        
+        if(!cell.classList.contains('clicked')){
+          cell.classList.add('clicked');  
           ++score;
+          scoreElement.innerText= score;
           console.log(cellnumb);
-        
-        
-        
-        scoreElement.innerText= score;
+        }
+        else {return}
       })
-      
       
       grid.appendChild(cell);
     }
