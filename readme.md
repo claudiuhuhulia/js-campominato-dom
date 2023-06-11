@@ -27,4 +27,8 @@ Al termine della partita, il software deve comunicare il punteggio, cioè il num
     - **SE** la cella non ha la classe '*clicked*' allora aumenta il contatore '*SCORE*'.
 - Creo una function che mi generi 16 numeri random.
     - Dichiaro una array vuota. 
-    - continuo a generare numeri **fintanto che** la lunghezza dell'array è minore di 16 (considerando lo 0) e utilizzo un **DO WHILE** per far si che non vengano inseriti numeri uguali all'interno dell'array, successivamente li inserisco nell'array dichiarata precedentemente.
+    - continuo a generare numeri random **fintanto che** la lunghezza dell'array è minore di 16 (considerando lo 0) e utilizzo un **DO WHILE** per far si che non vengano inseriti numeri uguali all'interno dell'array, successivamente li inserisco nell'array dichiarata precedentemente.
+    - Creo la function **ENDGAME** che gestisca la fine della partita, sia in caso che l'utente abbia clickato su una bomba, sia che abbia vinto toalizzando il massimo dei punti.
+        - Creo un flag all'interno della function appena creata con un alert in caso abbia finito il gioco totalizzando il massimo punteggio e in caso abbia clickato su una bomba.   
+        - Creo un flag esterno in **false** e dentro la function lo trasformo in **true** in modo che all'inizio dell'eventlistener del click sulla cella se la function precedentemente creata è stata applicata in qualche casistica mi esca dall'eventlistener stesso.
+         

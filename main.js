@@ -4,6 +4,9 @@ const grid = document.getElementById('grid');
 const button= document.getElementById('play');
 const scoreElement = document.getElementById('score');
 
+let GameOver= false;
+
+
 /* FUNCTIONS */
 
 const createCell = () => {
@@ -11,7 +14,7 @@ const createCell = () => {
     cell.className= 'cell';
     return cell;
 } 
-const bombs = getrandombombs();
+
 function getrandombombs(){
   let bombs=[];
   while(bombs.length < 16){
@@ -24,6 +27,14 @@ function getrandombombs(){
   }
  return bombs
 }
+
+function EndGame(score, haswon){
+  const message= haswon ? `Hai vinto!` : `Hai perso, hai totalizzato ${score} punti!`;
+  alert(message);
+  GameOver= true;
+}
+
+const bombs = getrandombombs();
 
 console.log(bombs); 
 
@@ -38,15 +49,32 @@ button.addEventListener('click', function(){
       const cellnumb = cell.innerText= i + 1;
       
       cell.addEventListener('click', function(){
-        if(!cell.classList.contains('clicked')){
+
+        if( GameOver === true){
+          return
+        }
+
+        /* SE L'UTENTE HA CLICKATO UNA BOMBA */
+
+        if(bombs.includes(cellnumb)){
+          cell.classList.add('clickedbomb'); 
+          EndGame(score, false);
+        }
+        
+        if(score === 84){
+          EndGame(score, true);
+        }
+        
+        if(!cell.classList.contains('clicked') && !cell.classList.contains('clickedbomb')){
           cell.classList.add('clicked');  
           ++score;
           scoreElement.innerText= score;
           console.log(cellnumb);
         }
-        else {return}
+        
       })
-      
+    
       grid.appendChild(cell);
+
     }
 })
